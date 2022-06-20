@@ -29,38 +29,38 @@ private:
         int bitsSize = static_cast<int>(N);
 
 public:
-        Bitset& set();
-        Bitset& setting_by_given_val(long long value);
-        Bitset& reset();
-        Bitset& count();
-        Bitset& flip();
-        Bitset& to_String();
-        Bitset& to_Long();
-        Bitset& checking_none_all_any();
+        Bitset& set(); // ok
+        Bitset& setting_by_given_val(long long value); //ok
+        Bitset& reset();//ok
+        Bitset& count(); // ok
+        Bitset& flip();//error 
+        Bitset& to_String(); // ok
+        Bitset& to_Long(); // wrong
+        Bitset& checking_none_all_any(); //ok
         Bitset& choosing_operation();
         Bitset& choose(int index);
         Bitset& choosing_second();
     
-        bool any();
-        bool none();
-        bool all();
-        int getSize() const;
+        bool any(); //ok
+        bool none();//ok
+        bool all();//ok
+        int getSize() const; // wrong
     
         template<unsigned long long U>
-        friend std::ostream& operator << (std::ostream& COUT, const Bitset<U>& oth);
+        friend std::ostream& operator << (std::ostream& COUT, const Bitset<U>& oth);//ok
         Bitset<N>& operator = (const Bitset<N>& oth); // did not consider the self-attribution option
         Bitset<N>& operator = (Bitset <N>&& oth); //did not consider if "bits" in not nullptr 
         Bitset<N>& operator ~ (); //ok
         Bitset<N>& operator &= (const Bitset <N>& oth); //did not consider if the sizes of the comparable obeks are different
         Bitset<N>& operator |= (const Bitset <N>& oth);// did not consider if the sizes of the comparable obeks are different
         Bitset<N>& operator ^= (const Bitset <N>& oth); // did not consider if the sizes of the comparable obeks are different
-        Bitset<N>& operator <<= (const Bitset <N>& oth);
-        Bitset<N>& operator >>= (const Bitset <N>& oth);
-        Bitset<N>& operator << (const Bitset <N>& oth);
-        Bitset<N>& operator >> (const Bitset <N>& oth);
-        bool operator == (const Bitset <N>& oth);
-        bool operator != (const Bitset <N>& oth);
-        bool operator [] (unsigned int pos);
+        Bitset<N>& operator <<= (const Bitset <N>& oth);//It has not been taken into account that an object with a negative value or a variable can be given after the operator
+        Bitset<N>& operator >>= (const Bitset <N>& oth);//It has not been taken into account that an object with a negative value or a variable can be given after the operator
+        Bitset<N>& operator << (const Bitset <N>& oth);//It has not been taken into account that an object with a negative value or a variable can be given after the operator
+        Bitset<N>& operator >> (const Bitset <N>& oth);//It has not been taken into account that an object with a negative value or a variable can be given after the operator
+        bool operator == (const Bitset <N>& oth); //It has not been taken into account that an object with a negative value or a variable can be given after the operator
+        bool operator != (const Bitset <N>& oth); //It has not been taken into account that an object with a negative value or a variable can be given after the operator
+        bool operator [] (unsigned int pos);//No case of negative argument was discussed
     
 };
 
