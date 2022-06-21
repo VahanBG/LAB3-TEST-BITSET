@@ -13,3 +13,17 @@
   *flip () - Չի քննարկվել երբ տրվի բացասական , կամ չափից մեծ արգումենտի դեպքերը
   *  to_Long() -Չի քննարկվել երբ տրվի բացասական արգումենտի դեպքը , սխալ է աշխատում
 
+#It is desirable to write comments for the functions, there is no comment at all
+# constructors
+  * Giving the constructor a parameter, for example, gives the value "111700" "free (): invalid pointer"
+# operators
+  * operator = (copy) - self-attribution option not considered
+  * operator = (move) - it is not observed that "bits" are not empty
+  * operators & =, | =, ^ =, ==,! = not considered for operators,
+   when two comparable objects do not match in size,
+   in this case, if they do not match, it works incorrectly
+  * operators <<= , >>= , << , >> - who does not work when a negative number is given after the operator
+  * operators [] - not discussed when an over-argument is given  a negative argument
+ # functions 
+  *flip () - Not discussed when negative or excessive arguments are made
+  *  to_Long() -Not discussed when a negative argument is made, it works incorrectly
